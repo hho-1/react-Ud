@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 console.log("We started to Typescript");
 console.log("This is the second row.");
 var age = 37;
@@ -102,16 +104,17 @@ function throwError(errorMsg) {
 }
 // throwError("Hata")     bu hata veriyor
 //? never ile void arasindaki fark? void null ve undefined degerini döndürebiliyorken, never onlari bile döndürmez.
-var voidExample = null;
+//let voidExample: void = null;
 //let neverExample: never = null;
-console.log(voidExample);
+//console.log(voidExample);
 //! TYPE INFERENCE (Tip belirtmememize ragmen otomatik tip atamasi yapilmasi)
 var sayac = 0;
-console.log(typeof (sayac)); //number verir
+console.log(typeof sayac); //number verir
 function increment(counter) {
     return counter++;
 }
 function increment2(counter) {
+    // Bununla üstteki fonksiyon birbirinin aynisi
     return counter++;
 }
 var a = "Some text";
@@ -119,10 +122,10 @@ var b = 123;
 // a = b;            //Type 'number' is not assignable to type 'string'. hatasi veriyor
 //! TYPE ASSERTION
 var etwas = 123;
-console.log(typeof (etwas));
+console.log(typeof etwas);
 var empCode = etwas;
-console.log(typeof (empCode));
+console.log(typeof empCode);
 var personal = {};
-console.log(typeof (personal));
+console.log(typeof personal);
 personal.name = "Albert";
 console.log(personal.name);

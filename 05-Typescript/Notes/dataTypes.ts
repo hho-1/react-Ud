@@ -1,3 +1,5 @@
+export {};          // Bu satiri eklemezsek function'larda duplicate hatasi veriyor sürekli
+
 console.log("We started to Typescript");
 console.log("This is the second row.");
 
@@ -120,73 +122,68 @@ enum PrintMedia {
 
 console.log(PrintMedia.Newsletter); //NEWSLETTER verir
 
-
 //! UNION
 
-let code: string | number = "123"          // Ya string ya number
+let code: string | number = "123"; // Ya string ya number
 
-console.log(code)
+console.log(code);
 
-code = 32
-console.log(32)
-
+code = 32;
+console.log(32);
 
 //! ANY       cok önerilmese de frontendde kullanilabiliyor. backendde data type degisikiginden etkilenmesin diye
 
 let smthng: any = "Hello";
 
-smthng = 64
+smthng = 64;
 
-console.log(smthng)
+console.log(smthng);
 
-smthng = true          // Bunlarin hicbirinde hata almiyoruz
+smthng = true; // Bunlarin hicbirinde hata almiyoruz
 
-console.log(smthng)
+console.log(smthng);
 
-let someArray: any[] = ["John", 34, false]
-console.log(someArray)
-
+let someArray: any[] = ["John", 34, false];
+console.log(someArray);
 
 //! VOID
 
 //? Bir fonksiyon geriye deger döndürmüyorsa tipini void olarak tanimliyoruz
 
 function sayHello(): void {
-    console.log("Hello")
+  console.log("Hello");
 }
 
-sayHello()
-
+sayHello();
 
 //! NEVER (geriye null dahil hicbir value dönmeyecek demek)
 
 function throwError(errorMsg: string): never {
-    throw new Error(errorMsg)
+  throw new Error(errorMsg);
 }
 
 // throwError("Hata")     bu hata veriyor
 
-
 //? never ile void arasindaki fark? void null ve undefined degerini döndürebiliyorken, never onlari bile döndürmez.
 
-let voidExample: void = null;
+//let voidExample: void = null;
 //let neverExample: never = null;
 
-console.log(voidExample)
-
+//console.log(voidExample);
 
 //! TYPE INFERENCE (Tip belirtmememize ragmen otomatik tip atamasi yapilmasi)
 
 let sayac = 0;
 
-console.log(typeof(sayac))           //number verir
+console.log(typeof sayac); //number verir
 
 function increment(counter: number) {
-    return counter++;
+  return counter++;
 }
 
-function increment2(counter: number):number {           // Bununla üstteki fonksiyon birbirinin aynisi
-    return counter++;
+function increment2(counter: number): number {
+  // Bununla üstteki fonksiyon birbirinin aynisi
+  return counter++;
 }
 
 let a = "Some text";
@@ -194,27 +191,26 @@ let b = 123;
 
 // a = b;            //Type 'number' is not assignable to type 'string'. hatasi veriyor
 
-
 //! TYPE ASSERTION
 
 let etwas: any = 123;
-console.log(typeof (etwas))
+console.log(typeof etwas);
 
 let empCode = <number>etwas;
-console.log(typeof (empCode))
+console.log(typeof empCode);
 
 // let personal = {};
 // console.log(typeof (personal))
 
 //personal.name = "John"       //hata verir
 
-interface Personal{
-    name: string,
-    code:number
+interface Personal {
+  name: string;
+  code: number;
 }
 
 let personal = <Personal>{};
 
-console.log(typeof (personal));
-personal.name = "Albert"
-console.log(personal.name)
+console.log(typeof personal);
+personal.name = "Albert";
+console.log(personal.name);
