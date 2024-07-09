@@ -94,6 +94,10 @@ console.log(objem2.piSayisi);
 
 abstract class Department {
     constructor(public name: string) { }
+
+    printName(): void{
+        console.log("Department name: " + this.name)
+    }
     
     abstract printMeeting(): void;
 }
@@ -106,4 +110,16 @@ class AccountingDepartment extends Department {
     printMeeting(): void {
         console.log("The accounting department meets each Monday at 10.00am")
     }
+
+    generateReports(): void{
+        console.log("Generating accounting reports...")
+    }
 }
+
+let department = new AccountingDepartment()
+
+//let department2 = new Department()       //? Bunu yapamiyrouz, cünkü abstract class'in instance'i alinamiyor.
+
+department.printMeeting()
+department.printName()
+department.generateReports()

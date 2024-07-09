@@ -81,6 +81,9 @@ var Department = /** @class */ (function () {
     function Department(name) {
         this.name = name;
     }
+    Department.prototype.printName = function () {
+        console.log("Department name: " + this.name);
+    };
     return Department;
 }());
 var AccountingDepartment = /** @class */ (function (_super) {
@@ -91,5 +94,13 @@ var AccountingDepartment = /** @class */ (function (_super) {
     AccountingDepartment.prototype.printMeeting = function () {
         console.log("The accounting department meets each Monday at 10.00am");
     };
+    AccountingDepartment.prototype.generateReports = function () {
+        console.log("Generating accounting reports...");
+    };
     return AccountingDepartment;
 }(Department));
+var department = new AccountingDepartment();
+//let department2 = new Department()       //? Bunu yapamiyrouz, cünkü abstract class'in instance'i alinamiyor.
+department.printMeeting();
+department.printName();
+department.generateReports();
