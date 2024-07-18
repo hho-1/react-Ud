@@ -94,3 +94,7 @@ function combineStrings(message: string, ...names: string[]) {
 }
 
 combineStrings("Hello", "Ayse", "Ali", "Veli")
+
+
+
+
